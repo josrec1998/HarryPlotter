@@ -1,4 +1,4 @@
-const characters = [
+export const characters = [
     {
         "name": "Harry Potter",
         "alternate_names": [],
@@ -10382,4 +10382,3 @@ const characters = [
     }
 ];
 
-export default characters;
