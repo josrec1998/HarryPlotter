@@ -29,6 +29,9 @@ body {
   border-radius: 3px;
   overflow: hidden;
 }
+
+.isnowhidden {display: none;}
+
 .card-container > .card > .card__image {
   transform: scale(0.75);
   display: flex;

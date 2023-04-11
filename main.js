@@ -1,6 +1,7 @@
 import { characters } from "./data.js";
 
 const container = document.querySelector(".card-container");
+const input = document.querySelector("#searchbox");
 
 characters.forEach((rowling) => {
   const {
@@ -11,45 +12,38 @@ characters.forEach((rowling) => {
     image,
   } = rowling;
 
-
   container.innerHTML += `<div class="card"> 
-     <img class="card__image" src="${image}" alt="wizmugpic"></img> 
-     <section class="card__content">
-     <h2 class="card__heading" >${name}</h2>
-     <div class="card__text">
-     <p>${alternate_names}</p
-      
-      <p> ${house}</p>    
+    <img class="card__image" src="${image}" alt="wizmugpic"></img> 
+    <section class="card__content">
+      <h2 class="card__heading">${name}</h2>
+      <div class="card__text">
+        <p>${alternate_names}</p>
+        <p>${house}</p>    
       </div>
-      </section>
-     
-      
-    </div>`;
-
-   
-  console.log(species);
-  container.style.backgroundColor = "pink";
-
-  function liveSearch() {
-  
-    let search_query = document.getElementById("searchbox").value;
- 
-    for (var i = 0; i < container.length; i++) {
-      
-      if(container[i].name.innerText.toLowerCase()
-
-        .includes(search_query.toLowerCase())) {
-        
-          container[i].classList.add("not-hidden");
-          container = document.querySelectorAll("not-hidden")
-      } else {
-      
-        container[i].classList.remove("not-hidden");
-        container = document.querySelectorAll("not-hidden")
-      }
-    }
-  }
-
-  
+    </section>
+  </div>`;
 });
-Footer;
+
+container.style.backgroundColor = "pink";
+
+input.addEventListener("keyup", function () {
+  let search_query = input.value.toLowerCase();
+
+  
+
+  for (let i = 0; i < container.children.length; i++) {
+    const nameElement = container.children[i].querySelector('.card__heading').innerText.toLowerCase();
+
+
+    if(nameElement.includes(search_query)) {
+      container.children[i].classList.remove("isnowhidden");
+      
+      console.log(nameElement);
+
+    }  else {
+      container.children[i].classList.add("isnowhidden");
+      console.log("vamos los pibes"); 
+
+    } 
+  }
+});
