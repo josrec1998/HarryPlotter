@@ -30,7 +30,8 @@ body {
   overflow: hidden;
 }
 .card-container > .card > .card__image {
-  transform: scale(1.25);
+  transform: scale(0.75);
+  display: flex;
 }
 .card-container > .card > .card__content {
   padding: 1rem;

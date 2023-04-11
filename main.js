@@ -31,21 +31,21 @@ characters.forEach((rowling) => {
   container.style.backgroundColor = "pink";
 
   function liveSearch() {
-    // Locate the card elements
-    let cards = document.querySelectorAll('.card-container')
-    // Locate the search input
+  
     let search_query = document.getElementById("searchbox").value;
     // Loop through the cards
-    for (var i = 0; i < cards.length; i++) {
+    for (var i = 0; i < container.length; i++) {
       // If the text is within the card...
-      if(cards[i].innerText.toLowerCase()
+      if(container[i].name.innerText.toLowerCase()
         // ...and the text matches the search query...
         .includes(search_query.toLowerCase())) {
           // ...remove the `.is-hidden` class.
-          cards[i].classList.remove("is-hidden");
+          container[i].classList.add("not-hidden");
+          container = document.querySelectorAll("not-hidden")
       } else {
         // Otherwise, add the class.
-        cards[i].classList.add("is-hidden");
+        container[i].classList.remove("not-hidden");
+        container = document.querySelectorAll("not-hidden")
       }
     }
   }
