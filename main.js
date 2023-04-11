@@ -33,17 +33,17 @@ characters.forEach((rowling) => {
   function liveSearch() {
   
     let search_query = document.getElementById("searchbox").value;
-    // Loop through the cards
+ 
     for (var i = 0; i < container.length; i++) {
-      // If the text is within the card...
+      
       if(container[i].name.innerText.toLowerCase()
-        // ...and the text matches the search query...
+
         .includes(search_query.toLowerCase())) {
-          // ...remove the `.is-hidden` class.
+        
           container[i].classList.add("not-hidden");
           container = document.querySelectorAll("not-hidden")
       } else {
-        // Otherwise, add the class.
+      
         container[i].classList.remove("not-hidden");
         container = document.querySelectorAll("not-hidden")
       }
