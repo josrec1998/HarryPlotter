@@ -16,8 +16,7 @@ characters.forEach((rowling) => {
      <section class="card__content">
      <h2 class="card__heading" >${name}</h2>
      <div class="card__text">
-     if(alternate_names != 0)
-     <div>  aka <p>${alternate_names}</p> </div>
+     <p>${alternate_names}</p
       
       <p> ${house}</p>    
       </div>
@@ -27,5 +26,7 @@ characters.forEach((rowling) => {
     </div>`;
   console.log(species);
   container.style.backgroundColor = "pink";
+
+  const result = characters.filter(character => character.length > 6);
 });
 Footer;
