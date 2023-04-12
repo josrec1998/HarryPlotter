@@ -36,14 +36,13 @@ input.addEventListener("keyup", function () {
 
 
     if(nameElement.includes(search_query)) {
-      container.children[i].classList.remove("isnowhidden");
-      
-      console.log(nameElement);
+      container.children[i].style.display = 'flex';
 
     }  else {
-      container.children[i].classList.add("isnowhidden");
-      console.log("vamos los pibes"); 
+      container.children[i].style.display = 'none';
 
     } 
+    
+
   }
 });
